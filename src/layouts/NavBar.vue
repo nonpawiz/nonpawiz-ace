@@ -2,7 +2,6 @@
 import { RouterLink } from 'vue-router'
 import { VITE_APP_NAME, VITE_APP } from '@/utils/Utils'
 </script>
-
 <template>
     <header class="card myfont rounded-0 p-0">
         <nav class="navbar navbar-expand-lg navbar-light">

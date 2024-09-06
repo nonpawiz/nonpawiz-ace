@@ -1,5 +1,6 @@
 <script setup>
 import { defineProps, ref, watch } from "vue"
+import VueGallery from 'vue-gallery'
 const props = defineProps({
     crew: {
         type: Object,
@@ -8,7 +9,7 @@ const props = defineProps({
 });
 const index = ref(null)
 const images = props.crew.length == 0 ? [] : props.crew.map((i) => { return i.image })
-// console.log("images", images)
+console.log("images", images)
 </script>
 
 <template>
@@ -40,6 +41,6 @@ const images = props.crew.length == 0 ? [] : props.crew.map((i) => { return i.im
             </div>
         </div>
     </div>
-    <div v-else class="text-secondary d-flex align-items-center justify-content-center" style="height: 70vh">No crew
+    <div v-else class="text-secondary d-flex align-items-center justify-content-center" style="height: 70vh">no crew
     </div>
 </template>
