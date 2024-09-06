@@ -1,5 +1,5 @@
 <script setup>
-import { watchEffect, onMounted, ref } from 'vue';
+import { watchEffect, onMounted, ref, watch } from 'vue';
 import '@/assets/custom.css'
 import Vue3EasyDataTable from 'vue3-easy-data-table';
 import 'vue3-easy-data-table/dist/style.css';
@@ -12,6 +12,7 @@ const launches = ref([]);
 const launch_id = ref('');
 const searchField = ["crews", "name"];
 const sortType = ["desc", "asc"];
+const searchInput = ref('');
 const searchValue = ref('');
 const headers = [
     { text: 'Image', value: 'picture' },
@@ -51,10 +52,14 @@ const getData = async () => {
     }
 }
 
-// watchEffect(searchValue, (current, prev) => {
-//     const cleanedString = input.replace(/[^a-zA-Z0-9]/g, "")
-//     searchValue.value = cleanedString
-// });
+watch(() => searchInput.value, (current, prev) => {
+    // console.log("current", current);
+    const cleanedString = current.replace(/[^a-zA-Z0-9]/g, "")
+    searchValue.value = cleanedString
+    searchInput.value = cleanedString
+
+
+})
 
 onMounted(() => {
     getData()
@@ -77,7 +82,7 @@ onMounted(() => {
                     </div>
                     <div class="col-md-4">
                         <div class="form-floating mb-3">
-                            <input class="form-control fs-22 rounded" placeholder="โปรดเลือก" v-model="searchValue" />
+                            <input class="form-control fs-22 rounded" placeholder="โปรดเลือก" v-model="searchInput" />
                             <label class="fs-18" htmlFor="">
                                 Search...
                             </label>

@@ -27,6 +27,7 @@ const props = defineProps({
 });
 
 </script>
+
 <template>
     <div v-if="launch != null">
         <div class="p-0 my-0 mt-2 tab-content">
