@@ -1,6 +1,6 @@
 <script setup>
 import VueGallery from 'vue-gallery'
-import { defineProps, ref, watch } from "vue"
+import { ref, watch } from "vue"
 import Rocket from '@/components/Home/Rocket.vue'
 import Launch from '@/components/Home/Launch.vue'
 import LaunchPad from '@/components/Home/LaunchPad.vue'
