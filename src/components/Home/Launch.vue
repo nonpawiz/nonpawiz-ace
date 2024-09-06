@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref, watch } from "vue"
+import { ref, watch } from "vue"
 import VueGallery from 'vue-gallery'
 import VLazyImage from "v-lazy-image";
 

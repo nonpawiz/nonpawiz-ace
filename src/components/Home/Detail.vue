@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref, watch, onMounted } from "vue"
+import { ref, watch, onMounted } from "vue"
 import DetailTabContent from '@/components/Home/DetailTabContent.vue'
 import { getFetch } from '@/utils/Utils'
 import Loader from "@/utils/Loader.vue"
